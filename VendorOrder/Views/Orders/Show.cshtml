@@ -1,0 +1,10 @@
+@using Tracking.Models;
+
+<h3>Here is your new order:</h3> 
+
+<ul>
+    @foreach(Order order in @Model["orders"])
+    {
+        <li><a href= '/vendors/@Model["category"].Id/orders/@order.Id'>@order.OrderName</a></li>
+    }
+</ul>

@@ -40,31 +40,21 @@ namespace Tracking.Controllers
             else
             {
                 int intID = int.Parse(vendorsID);
-                Vendor showVendor = Vendor.Show(intID);
-                return View(showVendor);
+                Vendor showVendor = Vendor.Find(intID);
+                Dictionary<string, object> model = new Dictionary<string, object>();
+                List<Order> orderItems = showVendor.Orders;
+                model.Add("category", showVendor);
+                model.Add("items", orderItems);
+                return View(model);
             }
-        }
-        [HttpPost("/vendors/itemDelete")]
-        public ActionResult Delete(string vendorsID)
-        {
-            int intId = int.Parse(vendorsID);
-            Vendor.DeleteItem(intId);
-            return View();
-        }
-
-        [HttpGet("/vendors/{id}/orders/new")]
-        public ActionResult NewOrder()
-        {
-            List<Order> newOrder = Order.GetAll();
-            return View(newOrder);
-        }
-
-        [HttpPost("/vendors/{id}/orders/new")]
-        public ActionResult Create(string name, string description, string price)
-        {
-
-            Order newOrder = new Order(name, description, price);
-            return RedirectToAction("Index");
         }
     }
 }
+
+// int ID = int.Parse(id);
+// Vendor selectVendor = Vendor.Find(ID);
+// Dictionary<string, object> model = new Dictionary<string, object>();
+// List<Order> orderItems = selectVendor.Orders;
+// model.Add("vendor", selectVendor);
+//             model.Add("orders", orderItems);
+//             return View(model);

@@ -1,9 +1,13 @@
+@using Tracking.Models;
 <h1>Vendor Details: </h1>
-<h2>@Model.VendorName</h2>
 <ul>
-<li><h3>Description of Order: @Model.Description</h3></li>
+    @foreach(Vendor vendor in @Model["category"])
+    {
+    <a href= '/vendors/@Model["category"].Id'>@Model.Description</a>
+
+    }
 </ul>
 
-<a href='/vendors/new'>Add another item</a>
-<a href='/vendors'>View all items</a>
-<a href = '/vendors/{id}/orders/new'>Create a new order for this vendor.</a>
+<a href='/vendors'>See your current vendors.</a>
+
+<a href = '/vendors/@Model["category"].Id/orders/new'>Create a new order for this vendor.</a>

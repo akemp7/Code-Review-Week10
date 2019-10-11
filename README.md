@@ -6,7 +6,7 @@
 
 ## Description
 
-_This MVC application allows the user to fill out and add to a list of the orders made by vendors from a ficticious bakery. It also allows the user to add a new order to a specific vendor. _
+This MVC application allows the user to fill out and add to a list of the orders made by vendors from a ficticious bakery. It also allows the user to add a new order to a specific vendor. 
 
 ## Setup/Installation Requirements
 
