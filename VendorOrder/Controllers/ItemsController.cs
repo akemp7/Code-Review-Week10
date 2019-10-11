@@ -41,20 +41,9 @@ namespace Tracking.Controllers
             {
                 int intID = int.Parse(vendorsID);
                 Vendor showVendor = Vendor.Find(intID);
-                Dictionary<string, object> model = new Dictionary<string, object>();
-                List<Order> orderItems = showVendor.Orders;
-                model.Add("category", showVendor);
-                model.Add("items", orderItems);
-                return View(model);
-            }
-        }
+                return View(showVendor);
+            }  
+        } 
     }
 }
 
-// int ID = int.Parse(id);
-// Vendor selectVendor = Vendor.Find(ID);
-// Dictionary<string, object> model = new Dictionary<string, object>();
-// List<Order> orderItems = selectVendor.Orders;
-// model.Add("vendor", selectVendor);
-//             model.Add("orders", orderItems);
-//             return View(model);

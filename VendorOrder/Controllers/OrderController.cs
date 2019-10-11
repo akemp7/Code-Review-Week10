@@ -29,10 +29,15 @@ namespace Tracking.Controllers
         }
 
         [HttpGet("/orders/{id}")]
-        public ActionResult Show(int id)
-        {   
-           Order orderId = Order.Find(id);
-           return View(orderId);
+        public ActionResult Show(string id)
+        {
+            int intID = int.Parse(id);
+            Vendor showVendor = Vendor.Find(intID);
+            Dictionary<string, object> model = new Dictionary<string, object>();
+            List<Order> orderItems = showVendor.Orders;
+            model.Add("category", showVendor);
+            model.Add("items", orderItems);
+            return View(model);
         }
     }
 }
