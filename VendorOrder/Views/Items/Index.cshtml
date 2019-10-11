@@ -6,9 +6,10 @@
   <p>There are no vendors for you to see!</p>
 }
 <ul>
-  @foreach (Vendor item in Model)
+  @foreach (Vendor vendor in Model)
   {
-    <li>@item.VendorName, @item.Id</li>
+    <li>@vendor.Description, @vendor.Id</li>
+    <li>@vendor.VendorName</li>
   }
 </ul>
 
@@ -25,5 +26,5 @@
 </form>
 
 
-<a href="/places/new">Add a new item.</a>
+<a href="/vendors/new">Add a new item.</a>
 

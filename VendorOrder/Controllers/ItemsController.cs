@@ -13,17 +13,19 @@ namespace Tracking.Controllers
             return View(newVendor);
         }
 
-        [HttpPost("/vendors")]
-        public ActionResult Create(string name, string description)
-        {
-            Vendor newVendor = new Vendor(name, description);
-            return RedirectToAction("Index");
-        }
+     
 
         [HttpGet("/vendors/new")]
         public ActionResult New()
         {
             return View();
+        }
+
+        [HttpPost("/vendors")]
+        public ActionResult Create(string vendorName, string description)
+        {
+            Vendor newVendor = new Vendor(vendorName, description);
+            return RedirectToAction("Index");
         }
 
         [HttpGet("/vendors/{id}")]
@@ -43,12 +45,25 @@ namespace Tracking.Controllers
             }
         }
         [HttpPost("/vendors/itemDelete")]
-        public ActionResult Delete(string searchID)
+        public ActionResult Delete(string vendorsID)
         {
-            int intId = int.Parse(searchID);
+            int intId = int.Parse(vendorsID);
             Vendor.DeleteItem(intId);
             return View();
         }
 
+        // [HttpGet ("/vendors/{id}/orders/new")]
+        // public ActionResult Index()
+        // {
+        //     List<Order> newOrder = Order.GetAll();
+        //     return View(newOrder);
+        // }
+
+        // [HttpPost("/vendors/{id}/orders/new")]
+        // public ActionResult Create(string name, string description, )
+        // {
+        //     Vendor newVendor = new Vendor(name, description);
+        //     return RedirectToAction("Index");
+        // }
     }
 }
