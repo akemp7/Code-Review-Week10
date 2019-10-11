@@ -45,7 +45,7 @@ namespace Tracking.Controllers
             }
         }
         [HttpPost("/vendors/itemDelete")]
-        public ActionResult DeleteAll(string vendorsID)
+        public ActionResult Delete(string vendorsID)
         {
             int intId = int.Parse(vendorsID);
             Vendor.DeleteItem(intId);
@@ -57,12 +57,13 @@ namespace Tracking.Controllers
         // {
         //     List<Order> newOrder = Order.GetAll();
         //     return View(newOrder);
-        // }
+        //  }
 
         // [HttpPost("/vendors/{id}/orders/new")]
-        // public ActionResult Create(string name, string description, )
+        // public ActionResult Create(string name, string description, string price, string date)
         // {
-        //     Vendor newVendor = new Vendor(name, description);
+            
+        //    Vendor newOrder = new Order(name, description, price, date);
         //     return RedirectToAction("Index");
         // }
     }
