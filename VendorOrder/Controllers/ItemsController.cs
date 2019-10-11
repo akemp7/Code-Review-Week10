@@ -45,20 +45,20 @@ namespace Tracking.Controllers
             }  
         }
 
-        [HttpGet("/vendors/{id}/orders/new")]
-        public ActionResult NewOrder()
-        {
-            List<Order> newOrder = Order.GetAll();
-            return View(newOrder);
-        }
+        // [HttpGet("/vendors/{id}/orders/new")]
+        // public ActionResult NewOrder()
+        // {
+        //     List<Order> newOrder = Order.GetAll();
+        //     return View(newOrder);
+        // }
 
-        [HttpPost("/vendors/{id}/orders/new")]
-        public ActionResult Create(string name, string description, string price)
-        {
+        // [HttpPost("/vendors/{id}/orders/new")]
+        // public ActionResult Create(string name, string description, string price)
+        // {
 
-            Order newOrder = new Order(name, description, price);
-            return RedirectToAction("Index");
-        }
+        //     Order newOrder = new Order(name, description, price);
+        //     return RedirectToAction("Index");
+        // }
     }
 }
 
