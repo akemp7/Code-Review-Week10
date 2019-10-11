@@ -10,12 +10,15 @@ namespace Tracking.Models
         public int Id { get; }
         private static List<Vendor> _vendorList = new List<Vendor> { };
 
+        public List<Item> Items {get; set; }
+
         public Vendor(string vendorName, string description)
         {
             VendorName = vendorName;
             Description = description;
             _vendorList.Add(this);
             Id = _vendorList.Count;
+            Items = new List<Item> { };
         }
 
         public static List<Vendor> GetAll()
@@ -27,6 +30,11 @@ namespace Tracking.Models
         {
             _vendorList.Clear();
         }
+        public void AddItem(Item item)
+        {
+            Items.Add(item);
+        }
+
 
         public static Vendor Show(int search)
         {
@@ -43,29 +51,5 @@ namespace Tracking.Models
                 }
             }
         }
-
-    }
-
-    public class Order
-    {
-        public string OrderName { get; set; }
-        public string OrderDescription { get; set; }
-        public string OrderPrice { get; set; }
-        public string OrderDate {get; set; }
-        private static List<Order> _orderList = new List<Order> { };
-
-        public Order(string orderName, string description, string price, string date)
-        {
-           OrderName = orderName;
-           OrderDescription = description;
-           OrderPrice = price;
-           OrderDate = date;
-        }
-
-        public static List<Order> GetAll()
-        {
-            return _orderList;
-        }
-
     }
 }

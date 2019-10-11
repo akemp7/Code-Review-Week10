@@ -52,18 +52,18 @@ namespace Tracking.Controllers
             return View();
         }
 
-        // [HttpGet ("/vendors/{id}/orders/new")]
+        // [HttpGet("/vendors/{id}/orders/new")]
         // public ActionResult Index()
         // {
         //     List<Order> newOrder = Order.GetAll();
         //     return View(newOrder);
-        //  }
+        // }
 
         // [HttpPost("/vendors/{id}/orders/new")]
         // public ActionResult Create(string name, string description, string price, string date)
         // {
-            
-        //    Vendor newOrder = new Order(name, description, price, date);
+
+        //     Vendor newOrder = new Order(name, description, price, date);
         //     return RedirectToAction("Index");
         // }
     }
