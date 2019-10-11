@@ -28,7 +28,7 @@ namespace Tracking.Models
             _vendorList.Clear();
         }
 
-        public static Vendor Find(int search)
+        public static Vendor Show(int search)
         {
             return _vendorList[search - 1];
         }
