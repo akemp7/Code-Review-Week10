@@ -8,20 +8,19 @@
 <ul>
   @foreach (Vendor vendor in Model)
   {
-    <li>@vendor.Description, @vendor.Id</li>
-    <li>@vendor.VendorName</li>
+    <li>@vendor.VendorName, @vendor.Id</li>
   }
 </ul>
 
 <form action="/vendors/{id}">
-  <label for="vendorID">Search a vendor by their ID:</label>
-  <input id="vendorID" name="vendorID" type="text">
+  <label for="vendorsID">Search a vendor by their ID:</label>
+  <input id="vendorsID" name="vendorsID" type="text">
   <button type="submit">Submit</button>
 </form>
 
 <form action="/vendors/itemDelete" method="post">
-  <label for="vendorID">Delete a vendor by ID:</label>
-  <input id="vendorID" name="vendorID" type="text">
+  <label for="vendorsID">Delete a vendor by ID:</label>
+  <input id="vendorsID" name="vendorsID" type="text">
   <button type="submit">Submit</button>
 </form>
 

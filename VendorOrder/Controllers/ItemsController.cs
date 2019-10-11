@@ -45,7 +45,7 @@ namespace Tracking.Controllers
             }
         }
         [HttpPost("/vendors/itemDelete")]
-        public ActionResult Delete(string vendorsID)
+        public ActionResult DeleteAll(string vendorsID)
         {
             int intId = int.Parse(vendorsID);
             Vendor.DeleteItem(intId);
