@@ -43,7 +43,22 @@ namespace Tracking.Controllers
                 Vendor showVendor = Vendor.Find(intID);
                 return View(showVendor);
             }  
-        } 
+        }
+
+        [HttpGet("/vendors/{id}/orders/new")]
+        public ActionResult NewOrder()
+        {
+            List<Order> newOrder = Order.GetAll();
+            return View(newOrder);
+        }
+
+        [HttpPost("/vendors/{id}/orders/new")]
+        public ActionResult Create(string name, string description, string price)
+        {
+
+            Order newOrder = new Order(name, description, price);
+            return RedirectToAction("Index");
+        }
     }
 }
 
